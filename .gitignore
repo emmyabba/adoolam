@@ -1,0 +1,17 @@
+/app/Controller/Instructor
+/app/Controller/Learner
+/routes/admin.php
+/routes/instructor.php
+/routes/learner.php
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
