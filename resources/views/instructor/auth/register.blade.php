@@ -71,7 +71,8 @@
                 <div class="page-separator__text">or</div>
             </div>
 
-            <form action="{{ route('instructor.register') }}" novalidate>
+            <form action="{{ route('instructor.register') }}" method="POST" novalidate>
+                @csrf
                 <div class="form-group">
                     <label class="text-label" for="email_2">Email Address:</label>
                     <div class="input-group input-group-merge">
