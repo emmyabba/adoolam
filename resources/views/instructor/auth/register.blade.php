@@ -70,13 +70,17 @@
             <div class="page-separator">
                 <div class="page-separator__text">or</div>
             </div>
-
-            <form action="{{ route('instructor.register') }}" method="POST" novalidate>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            <form action="{{ route('instructor.register') }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label class="text-label" for="email_2">Email Address:</label>
                     <div class="input-group input-group-merge">
-                        <input id="email" name="email" type="email" required="" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-prepended" placeholder="john@doe.com">
+                        <input id="email" name="email" type="email" required="" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-prepended" placeholder="john@doe.com" value="{{ old('email') }}">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="far fa-envelope"></span>
@@ -90,9 +94,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="text-label" for="email_2">Phone Number</label>
+                    <label class="text-label" for="phone_number">Phone Number</label>
                     <div class="input-group input-group-merge">
-                        <input id="phone_number" name="phone_number" type="email" required="" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-prepended" placeholder="0801 2345 678">
+                        <input id="phone_number" name="phone_number" type="text" required="" value="{{ old('phone_number') }}" class="form-control{{ $errors->has('phone_number') ? ' is-invalid' : '' }} form-control-prepended" placeholder="0801 2345 678">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-phone"></span>
@@ -108,7 +112,7 @@
                 <div class="form-group">
                     <label class="text-label" for="password_2">Password:</label>
                     <div class="input-group input-group-merge">
-                        <input id="password_2" type="password" required="" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-prepended" placeholder="Enter your password">
+                        <input id="password" name="password" type="password" required="" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-prepended" placeholder="Enter your password">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-key"></span>
@@ -124,7 +128,7 @@
                 <div class="form-group">
                     <label class="text-label" for="password_2">Confirm Password:</label>
                     <div class="input-group input-group-merge">
-                        <input id="password_confirmation" name="password_confirmation" type="password" required="" class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }} form-control-prepended" placeholder="Enter your password">
+                        <input id="password-confirm" type="password" name="password_confirmation" required="" class="form-control form-control-prepended" placeholder="Enter your password">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-key"></span>
