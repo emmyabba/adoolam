@@ -10,7 +10,7 @@
                         <a href="/"><span>ADOOLAM</span></a>
                     </div>
                     <div class="login-form">
-                        <h4>Learner Login</h4>
+                        <h4>Learner Login Page</h4>
                         <form method="POST" action="{{ route('learner.login') }}">
                             @csrf
                             <div class="form-group">
