@@ -3,7 +3,7 @@
     <!-- BEGIN: Head -->
     <head>
         <meta charset="utf-8">
-        <link href="{!! asset('userback/images/logo.svg') !!}" rel="shortcut icon">
+        <link href="{!! asset('userback/images/adoolam_logo_inverse.png.png') !!}" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="">
         <meta name="keywords" content="">
@@ -487,8 +487,7 @@
             <!-- BEGIN: Side Menu -->
             <nav class="side-nav">
                 <a href="" class="intro-x flex items-center pl-5 pt-4">
-                    <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="{!! asset('userback/images/logo.svg') !!}">
-                    <span class="hidden xl:block text-white text-lg ml-3"> Mid<span class="font-medium">one</span> </span>
+                    <img alt="Adoolam" class="" src="{!! asset('userback/images/adoolam_logo_inverse.png') !!}">
                 </a>
                 <div class="side-nav__devider my-6"></div>
                 <ul>
