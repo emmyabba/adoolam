@@ -26,7 +26,8 @@ class HomeController extends Controller
      */
     public function index() {
         $title = 'Instructor Dashboard';
-        return view('instructor.home', \compact('title'));
+        $active = 'dashboard';
+        return view('instructor.home', \compact('title', 'active'));
     }
 
 }

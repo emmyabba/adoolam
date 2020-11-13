@@ -26,7 +26,18 @@ class CourseController extends Controller
      */
     public function index() {
         $title = 'Add Course';
-        return view('instructor.addcourse', \compact('title'));
+        $active = 'addcourse';
+        return view('instructor.addcourse', \compact('title', 'active'));
+    }
+
+    public function createcourse()
+    {
+        return Validator::make($data, [
+            'course_title' => 'required|max:255|unique:courses',
+            'course_description' => 'required|max:255',
+            'course_price' => 'required',
+            'agreement'=>'required'
+        ]);
     }
 
 }

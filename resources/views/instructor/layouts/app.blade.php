@@ -28,7 +28,7 @@
             </div>
             <ul class="border-t border-theme-24 py-5 hidden">
                 <li>
-                    <a href="{{route('instructor.dashboard')}}" class="menu menu--active">
+                    <a href="{{route('instructor.dashboard')}}" class="menu @if($active =='dashboard'){{'menu--active'}}@endif">
                         <div class="menu__icon"> <i data-feather="home"></i> </div>
                         <div class="menu__title"> Dashboard </div>
                     </a>
@@ -73,13 +73,13 @@
                 <div class="side-nav__devider my-6"></div>
                 <ul>
                     <li>
-                        <a href="{{route('instructor.dashboard')}}" class="side-menu side-menu--active">
+                        <a href="{{route('instructor.dashboard')}}" class="side-menu @if($active =='dashboard'){{'side-menu--active'}}@endif">
                             <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                             <div class="side-menu__title"> Dashboard </div>
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:;" class="side-menu">
+                        <a href="javascript:;" class="side-menu @if($active =='addcourse'){{'side-menu--active'}}@endif">
                             <div class="side-menu__icon"> <i data-feather="book-open"></i> </div>
                             <div class="side-menu__title"> courses <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
                         </a>
