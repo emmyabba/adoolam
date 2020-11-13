@@ -52,6 +52,7 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255|unique:instructors',
             'phone_number' => 'required|max:255|unique:instructors',
             'password' => 'required|min:6|confirmed',
+            'agreement'=>'required'
         ]);
     }
 

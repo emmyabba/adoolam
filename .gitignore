@@ -1,5 +1,3 @@
-/app/Controller/Instructor
-/app/Controller/Learner
 /routes/admin.php
 /routes/instructor.php
 /routes/learner.php

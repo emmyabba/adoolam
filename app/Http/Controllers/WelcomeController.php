@@ -11,6 +11,16 @@ class WelcomeController extends Controller
         return view('welcome');
     }
 
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
     public function dev()
     {
         return view('dev');

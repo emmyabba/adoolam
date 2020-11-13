@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'WelcomeController@dev');
-
-Route::get('/dev', 'WelcomeController@index')->name('welcome');
+Route::get('/', 'WelcomeController@index')->name('welcome');
+Route::get('/about-us', 'WelcomeController@about')->name('welcome.about');
+Route::get('/contact-us', 'WelcomeController@contact')->name('welcome.contact');
 Route::get('/all-courses', 'WelcomeController@index')->name('welcome.courses');
 Route::get('/free-courses', 'WelcomeController@index')->name('welcome.free.courses');
 Route::get('/popular-courses', 'WelcomeController@index')->name('welcome.popular.courses');

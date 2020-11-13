@@ -3,10 +3,6 @@
 @section('content')
  @include('layouts.sliders')
 
-@endsection
-
-@section('dev')
-
 <!-- feature-section
 			================================================== -->
 		<section class="feature-section">
@@ -20,7 +16,7 @@
 								</div>
 								<div class="feature-content">
 									<h2>
-										Online Learn Courses Management Platform
+										Online Learn Courses Management Platformp
 									</h2>
 									<p>Analyzing negative materials about your brand and addressing them with sentiment analysis and press.</p>
 								</div>

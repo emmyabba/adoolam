@@ -1,163 +1,78 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Instructor Login</title>
-
-    <!-- Prevent the demo from appearing in search engines -->
-    <meta name="robots" content="noindex">
-
-    <!-- Perfect Scrollbar -->
-    <link type="text/css" href="{{asset('backend/vendor/perfect-scrollbar.css')}}" rel="stylesheet">
-
-    <!-- App CSS -->
-    <link type="text/css" href="{{asset('backend/css/app.css')}}" rel="stylesheet">
-    <link type="text/css" href="{{asset('backend/css/app.rtl.css')}}" rel="stylesheet">
-
-    <!-- Material Design Icons -->
-    <link type="text/css" href="{{asset('backend/css/vendor-material-icons.css')}}" rel="stylesheet">
-    <link type="text/css" href="{{asset('backend/css/vendor-material-icons.rtl.css')}}" rel="stylesheet">
-
-    <!-- Font Awesome FREE Icons -->
-    <link type="text/css" href="{{asset('backend/css/vendor-fontawesome-free.css')}}" rel="stylesheet">
-    <link type="text/css" href="{{asset('backend/css/vendor-fontawesome-free.rtl.css')}}" rel="stylesheet">
-
-    <!-- ion Range Slider -->
-    <link type="text/css" href="{{asset('backend/css/vendor-ion-rangeslider.css')}}" rel="stylesheet">
-    <link type="text/css" href="{{asset('backend/css/vendor-ion-rangeslider.rtl.css')}}" rel="stylesheet">
-
-
-
-
-
-</head>
-
-<body class="layout-login-centered-boxed">
-
-
-
-
-
-    <div class="layout-login-centered-boxed__form">
-        <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-2 navbar-light">
-            <a href="index.html" class="navbar-brand text-center mb-2 mr-0" style="min-width: 0">
-                <!-- LOGO -->
-
-                <span class="ml-2">ADOOLAM</span>
-            </a>
-        </div>
-
-        <div class="card card-body">
-
-            <a href="" class="btn btn-light btn-block">
-                <span class="mr-2">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg">
-                        <g>
-                            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
-                            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
-                            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
-                            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
-                            <path fill="none" d="M0 0h48v48H0z"></path>
-                        </g>
-                    </svg>
-                </span>
-                Continue with Google
-            </a>
-
-            <div class="page-separator">
-                <div class="page-separator__text">or</div>
-            </div>
-
-            <form action="{{ route('instructor.login') }}" method="POST" novalidate>
-                @csrf
-                <div class="form-group">
-                    <label class="text-label" for="email_2">Email Address:</label>
-                    <div class="input-group input-group-merge">
-                        <input id="email" name="email" type="email" required="" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-prepended" placeholder="john@doe.com">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="far fa-envelope"></span>
-                            </div>
+<html lang="en">
+    <!-- BEGIN: Head -->
+    <head>
+        <meta charset="utf-8">
+        <link href="{!! asset('userback/images/logo.svg') !!}" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="LEFT4CODE">
+        <title>Instructor Registration</title>
+        <!-- BEGIN: CSS Assets-->
+        <link rel="stylesheet" href="{!! asset('userback/css/app.css') !!}" />
+        <link rel="stylesheet" href="{!! asset('userback/css/bootstrap.min.css') !!}" />
+        <!-- END: CSS Assets-->
+    </head>
+    <!-- END: Head -->
+    <body class="login">
+        <div class="container sm:px-10">
+            <div class="block xl:grid grid-cols-2 gap-4">
+                <!-- BEGIN: Register Info -->
+                <div class="hidden xl:flex flex-col min-h-screen">
+                    <a href="" class="-intro-x flex items-center pt-5">
+                        <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="{!! asset('userback/images/logo.svg') !!}">
+                        <span class="text-white text-lg ml-3"> Mid<span class="font-medium">One</span> </span>
+                    </a>
+                    <div class="my-auto">
+                        <img alt="Midone Tailwind HTML Admin Template" class="-intro-x w-1/2 -mt-16" src="{!! asset('userback/images/illustration.svg') !!}">
+                        <div class="-intro-x text-white font-medium text-4xl leading-tight mt-10">
+                            Sign in to your.
                         </div>
-                        @if ($errors->has('email'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
-                    @endif
+                        <div class="-intro-x mt-5 text-lg text-white">Manage all your courses in one place</div>
                     </div>
                 </div>
+                <!-- END: Register Info -->
+                <!-- BEGIN: Login Form -->
+                <form action="{{ route('instructor.login') }}" method="POST">
+                    @csrf
 
-                <div class="form-group">
-                    <label class="text-label" for="password_2">Password:</label>
-                    <div class="input-group input-group-merge">
-                        <input id="password_2" type="password" required="" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-prepended" placeholder="Enter your password">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="fa fa-key"></span>
-                            </div>
+                <div class="h-screen xl:h-auto flex py-5 xl:py-0 my-10 xl:my-0">
+                    <div class="my-auto mx-auto xl:ml-20 bg-white xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
+                        <h2 class="intro-x font-bold text-2xl xl:text-3xl text-center xl:text-left">
+                            Sign In
+                        </h2>
+                        <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">A few more clicks to sign in to your account. Manage all your e-commerce accounts in one place</div>
+                        <div class="intro-x mt-8">
+                            @foreach ($errors->all() as $error)
+                                <ul class="alert alert-danger">
+                                    <li>{{ $error }}</li>
+                                </ul>
+                                @endforeach
+                            <input class="intro-x login__input input input--lg border border-gray-300 block" placeholder="Email" id="email" name="email" type="email" >
+                            <input type="password" class="intro-x login__input input input--lg border border-gray-300 block mt-4" placeholder="Password" name="password">
                         </div>
-                        @if ($errors->has('password'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('password') }}</strong>
-                        </span>
-                    @endif
+                        <div class="intro-x flex text-gray-700 text-xs sm:text-sm mt-4">
+                            <div class="flex items-center mr-auto">
+                                <input type="checkbox" class="input border mr-2" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <label class="cursor-pointer select-none" for="remember-me">Remember me</label>
+                            </div>
+                            <a href="{{ route('instructor.password.request') }}">Forgot Password?</a>
+                        </div>
+                        <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
+                            <button class="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3" type="submit">Login</button>
+                            <a href="{{route('instructor.register')}}" class="button button--lg w-full xl:w-32 text-gray-700 border border-gray-300 mt-3 xl:mt-0">Sign up</a>
+                        </div>
+                        <div class="intro-x mt-10 xl:mt-24 text-gray-700 text-center xl:text-left">
+                            By signin up, you agree to our
+                            <br>
+                            <a class="text-theme-1" href="">Terms and Conditions</a> & <a class="text-theme-1" href="">Privacy Policy</a>
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <button class="btn btn-block btn-primary" type="submit">Signup</button>
-                </div>
-
-                <div class="form-group text-center">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" checked="" id="remember">
-                        <label class="custom-control-label" for="remember" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>Remember me for 30 days</label>
-                    </div>
-                </div>
-
-                <div class="form-group text-center">
-                    <a href="{{ route('instructor.password.request') }}">Forgot password? Click here</a> <br>
-                    Don't have an Instructor Account? <a class="text-body text-underline" href="{{route('instructor.register')}}">Register</a>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
-    <!-- jQuery -->
-    <script src="{{asset('backend/vendor/jquery.min.js')}}"></script>
-
-    <!-- Bootstrap -->
-    <script src="{{asset('backend/vendor/popper.min.js')}}"></script>
-    <script src="{{asset('backend/vendor/bootstrap.min.js')}}"></script>
-
-    <!-- Perfect Scrollbar -->
-    <script src="{{asset('backend/vendor/perfect-scrollbar.min.js')}}"></script>
-
-    <!-- DOM Factory -->
-    <script src="{{asset('backend/vendor/dom-factory.js')}}"></script>
-
-    <!-- MDK -->
-    <script src="{{asset('backend/vendor/material-design-kit.js')}}"></script>
-
-
-
-    <!-- App -->
-    <script src="{{asset('backend/js/toggle-check-all.js')}}"></script>
-    <script src="{{asset('backend/js/check-selected-row.js')}}"></script>
-    <script src="{{asset('backend/js/dropdown.js')}}"></script>
-    <script src="{{asset('backend/js/sidebar-mini.js')}}"></script>
-    <script src="{{asset('backend/js/app.js')}}"></script>
-
-    <!-- App Settings (safe to remove) -->
-    <script src="{{asset('backend/js/app-settings.js')}}"></script>
-
-
-
-
-</body>
-
+                <!-- END: Login Form -->
+        <!-- BEGIN: JS Assets-->
+        <script src="{!! asset('userback/dist/js/app.js') !!}"></script>
+        <!-- END: JS Assets-->
+    </body>
 </html>

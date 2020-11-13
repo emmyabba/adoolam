@@ -63,7 +63,7 @@
 				<div class="container">
 
 					<a class="navbar-brand" href="/">
-						<img src="images/logo.svg" alt="">
+						<img src="{!! asset('adool/images/adoolam-logo.png')!!}" alt="">
 					</a>
 
 					<a href="#" class="mobile-nav-toggle">
@@ -87,14 +87,18 @@
 							<li class="drop-link">
 								<a href="#">Instructors <i class="fa fa-angle-down"></i></a>
 								<ul class="dropdown">
-                                <li><a href="{{route('instructor.register')}}">Signup</a></li>
+                                <li><a href="{{route('instructor.register')}}">Sign up</a></li>
+                                <li><a href="{{route('instructor.login')}}">Sign in</a></li>
 								</ul>
                             </li>
                             <li class="drop-link">
 								<a href="#">Learners <i class="fa fa-angle-down"></i></a>
 								<ul class="dropdown">
-                                <li><a href="{{route('learner.register')}}">Signup</a></li>
+                                {{-- <li><a href="{{route('learner.register')}}">Signup</a></li> --}}
 								</ul>
+                            </li>
+                            <li class="drop-link">
+								<a class="active" href="{{route('welcome.about')}}">About</a>
 							</li>
 
                         </ul>
@@ -137,7 +141,10 @@
                         <li class="drop-link">
                             <a href="#">Learners <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown">
-                            <li><a href="{{route('learner.register')}}">Signup</a></li>
+                            {{-- <li><a href="{{route('learner.register')}}">Signup</a></li>--}}
+                            <li>
+								<a class="active" href="{{route('welcome.about')}}">About</a>
+							</li>
                             </ul>
                         </li>
 					</ul>
@@ -161,7 +168,7 @@
 
 						<div class="col-lg-4 col-md-6">
 							<div class="footer-widget text-widget">
-								<a href="index.html" class="footer-logo"><img src="images/logo_light.svg" alt=""></a>
+								<a href="{{route('welcome')}}" class="footer-logo"><img src="{!! asset('adool/images/adoolam-logo.png')!!}" alt=""></a>
 								<p></p>
 								<ul>
 									<li>
@@ -174,7 +181,7 @@
 										<div class="contact-info-icon">
 											<i class="material-icons">phone_android</i>
 										</div>
-										<div class="contact-info-value"></div>
+										<div class="contact-info-value">0000 000 0000</div>
 									</li>
 								</ul>
 							</div>
@@ -185,7 +192,6 @@
 								<h2>Quick Links</h2>
 								<ul class="quick-list">
 									<li><a href="#">Contact</a></li>
-									<li><a href="#">Pricing Packages</a></li>
 									<li><a href="#">About Us</a></li>
 									<li><a href="#">Courses</a></li>
 									<li><a href="#">News</a></li>
