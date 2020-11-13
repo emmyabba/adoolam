@@ -18,15 +18,15 @@
                     <div class="preview">
                         <div>
                             <label>Course Title</label>
-                            <input type="text" class="input w-full border mt-2 " placeholder="Enter your course title here">
+                            <input type="text" class="input w-full border mt-2 " placeholder="Enter your course title here" name="course_title">
                         </div>
                         <div class="mt-3">
                             <label>Course Description</label>
-                            <form method="post"> <textarea class="summernote" name="editor" placeholder="j"></textarea> </form>
+                            <textarea class="summernote" name="course_description">Description Goes here</textarea>
                         </div>
                         <div class="mt-3">
                             <label>is this a Free Course?</label>
-                            <select  data-hide-search="true" class="select2 w-full">
+                            <select  data-hide-search="true" class="select2 w-full" name="course_type">
                                 <option>-- select --</option>
                                 <option value="No">No</option>
                                 <option value="Yes">Yes</option>
@@ -34,7 +34,11 @@
                         </div>
                         <div class="mt-3">
                             <label>Course Price</label>
-                            <input type="text" class="input w-full border mt-2" placeholder="# 00.00">
+                            <input type="text" class="input w-full border mt-2" placeholder="# 00.00" name="course_price">
+                        </div>
+
+                        <div class="mt-3">
+                            <button type="button" class="button bg-theme-1 text-white mt-5 w-full">Save</button>
                         </div>
                     </div>
 

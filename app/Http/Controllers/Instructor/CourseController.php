@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Instructor;
 
 use App\Http\Controllers\Controller;
+use App\Course;
 
 class CourseController extends Controller
 {
@@ -38,6 +39,19 @@ class CourseController extends Controller
             'course_price' => 'required',
             'agreement'=>'required'
         ]);
+
+        $course = new Course;
+        $course->instructor_id = $request->email;
+        $course->course_title = $request->phone_number;
+        $course->course_description = $request->designation;
+        $course->status = $request->email;
+        $course->course_type = $request->phone_number;
+        $course->course_price = $request->designation;
+
+        $course->save();
+
+        return redirect()->back()->with('success', 'Thank you for signing up. We will let you know when we go LIVE');
+
     }
 
 }
