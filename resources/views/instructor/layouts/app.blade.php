@@ -3,14 +3,14 @@
     <!-- BEGIN: Head -->
     <head>
         <meta charset="utf-8">
-        <link href="dist/images/logo.svg" rel="shortcut icon">
+        <link href="{!! asset('userback/images/logo.svg') !!}" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Midone admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
-        <meta name="keywords" content="admin template, Midone admin template, dashboard template, flat admin template, responsive admin template, web app">
+        <meta name="">
+        <meta name="keywords" content="">
         <meta name="author" content="">
-        <title>Dashboard - Midone - Tailwind HTML Admin Template</title>
+        <title>Instructor Dashboard</title>
         <!-- BEGIN: CSS Assets-->
-        <link rel="stylesheet" href="dist/css/app.css" />
+        <link rel="stylesheet" href="{!! asset('userback/css/app.css') !!}" />
         <!-- END: CSS Assets-->
     </head>
     <!-- END: Head -->
@@ -19,7 +19,7 @@
         <div class="mobile-menu md:hidden">
             <div class="mobile-menu-bar">
                 <a href="" class="flex mr-auto">
-                    <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="dist/images/logo.svg">
+                    <img alt="" class="w-6" src="{!! asset('userback/images/logo.svg') !!}">
                 </a>
                 <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             </div>
@@ -1920,9 +1920,8 @@
             <!-- END: Content -->
         </div>
         <!-- BEGIN: JS Assets-->
-        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script>
-        <script src="dist/js/app.js"></script>
+        <script src="{!! asset('userback/js/markerclusterer.js') !!}"></script>
+        <script src="{!! asset('userback/js/app.js') !!}"></script>
         <!-- END: JS Assets-->
     </body>
 </html>
