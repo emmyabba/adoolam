@@ -19,6 +19,9 @@
     <script type="text/javascript" src="{!! asset('adool/js/extensions/revolution.extension.layeranimation.min.js') !!}"></script>
     <script type="text/javascript" src="{!! asset('adool/js/extensions/revolution.extension.navigation.min.js') !!}"></script>
     <script type="text/javascript" src="{!! asset('adool/js/extensions/revolution.extension.parallax.min.js') !!}"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="{!! asset('userback/images/favicon_io/apple-touch-icon.png') !!}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{!! asset('userback/images/favicon_io/favicon-32x32.png') !!}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{!! asset('userback/images/favicon_io/favicon-16x16.png') !!}">
 
 
 </head>
