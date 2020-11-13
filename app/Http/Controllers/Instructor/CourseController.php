@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Instructor;
 
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class CourseController extends Controller
 {
 
     protected $redirectTo = '/instructor/login';
@@ -25,8 +25,8 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $title = 'Instructor Dashboard';
-        return view('instructor.home', \compact('title'));
+        $title = 'Add Course';
+        return view('instructor.addcourse', \compact('title'));
     }
 
 }
