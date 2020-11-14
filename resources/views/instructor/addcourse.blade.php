@@ -15,33 +15,36 @@
             <div class="intro-y box">
 
                 <div class="p-5" id="input">
+                <form method="POST" action="{{route('instructor.save.course')}}">
+                    @csrf
+                    @include('errors')
                     <div class="preview">
                         <div>
                             <label>Course Title</label>
-                            <input type="text" class="input w-full border mt-2 " placeholder="Enter your course title here" name="course_title">
+                        <input type="text" class="input w-full border mt-2 " placeholder="Enter your course title here" name="course_title" value="{{old('course_title')}}">
                         </div>
                         <div class="mt-3">
                             <label>Course Description</label>
-                            <textarea class="summernote" name="course_description">Description Goes here</textarea>
+                            <textarea class="summernote" name="course_description">{{old('course_description')}}</textarea>
                         </div>
                         <div class="mt-3">
                             <label>is this a Free Course?</label>
                             <select  data-hide-search="true" class="select2 w-full" name="course_type">
                                 <option>-- select --</option>
-                                <option value="No">No</option>
-                                <option value="Yes">Yes</option>
+                                <option value="Free">Free</option>
+                                <option value="Paid">Paid</option>
                             </select>
                         </div>
                         <div class="mt-3">
                             <label>Course Price</label>
-                            <input type="text" class="input w-full border mt-2" placeholder="# 00.00" name="course_price">
+                            <input type="text" class="input w-full border mt-2" placeholder="# 00.00" name="course_price" {{old('course_title')}}>
                         </div>
 
                         <div class="mt-3">
-                            <button type="button" class="button bg-theme-1 text-white mt-5 w-full">Save</button>
+                            <button class="button bg-theme-1 text-white mt-5 w-full" type="submit">Save</button>
                         </div>
                     </div>
-
+                </form>
                 </div>
             </div>
         </div>

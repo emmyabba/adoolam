@@ -44,11 +44,7 @@
                         </h2>
                         <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">A few more clicks to sign in to your account. Manage all your e-commerce accounts in one place</div>
                         <div class="intro-x mt-8">
-                            @foreach ($errors->all() as $error)
-                                <ul class="alert alert-danger">
-                                    <li>{{ $error }}</li>
-                                </ul>
-                                @endforeach
+                           @include('errors')
                             <input class="intro-x login__input input input--lg border border-gray-300 block" placeholder="Email" id="email" name="email" type="email" >
                             <input type="password" class="intro-x login__input input input--lg border border-gray-300 block mt-4" placeholder="Password" name="password">
                         </div>
