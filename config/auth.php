@@ -36,6 +36,11 @@ return [
     */
 
     'guards' => [
+        'test' => [
+            'driver'   => 'session',
+            'provider' => 'tests',
+        ],
+
         'learner' => [
             'driver'   => 'session',
             'provider' => 'learners',
@@ -80,6 +85,11 @@ return [
     */
 
     'providers' => [
+        'tests' => [
+            'driver' => 'eloquent',
+            'model'  => App\Test::class,
+        ],
+
         'learners' => [
             'driver' => 'eloquent',
             'model'  => App\Learner::class,
@@ -121,6 +131,12 @@ return [
     */
 
     'passwords' => [
+        'tests' => [
+            'provider' => 'tests',
+            'table'    => 'password_resets',
+            'expire'   => 60,
+        ],
+
         'learners' => [
             'provider' => 'learners',
             'table'    => 'password_resets',

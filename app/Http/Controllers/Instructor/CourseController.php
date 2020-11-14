@@ -43,7 +43,7 @@ class CourseController extends Controller
         ]);
 
         $course = new Course;
-        $course->instructor_id = 1;
+        $course->instructor_id = Auth::guard('instructor')->user()->id;
         $course->course_title = $request->course_title;
         $course->course_description = $request->course_description;
         $course->status = 1;
@@ -54,6 +54,13 @@ class CourseController extends Controller
 
         return redirect()->back()->with('success', 'Thank you for signing up. We will let you know when we go LIVE');
 
+    }
+
+    public function manage() {
+
+        $title = 'Manage Course';
+        $active = 'managecourse';
+        return view('instructor.managecourse', \compact('title', 'active'));
     }
 
 }

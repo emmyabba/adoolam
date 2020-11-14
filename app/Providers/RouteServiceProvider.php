@@ -46,6 +46,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapTestRoutes();
+
         $this->mapLearnerRoutes();
 
         $this->mapInstructorRoutes();
@@ -81,7 +83,24 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware(['web'])
              ->namespace($this->namespace)
              ->group(base_path('routes/learner.php'));
+    }    
+    
+    /**
+     * Define the "test" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapTestRoutes()
+    {
+        Route::prefix('test')
+             ->middleware(['web'])
+             ->namespace($this->namespace)
+             ->group(base_path('routes/test.php'));
     }
+
+
 
 
 
