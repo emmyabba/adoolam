@@ -52,7 +52,7 @@ class CourseController extends Controller
 
         $course->save();
 
-        return redirect()->back()->with('success', 'Thank you for signing up. We will let you know when we go LIVE');
+        return redirect(route('instructor.course.course'))->back()->with('success', 'Thank you for signing up. We will let you know when we go LIVE');
 
     }
 
@@ -61,6 +61,15 @@ class CourseController extends Controller
         $title = 'Manage Course';
         $active = 'managecourse';
         return view('instructor.managecourse', \compact('title', 'active'));
+    }
+
+    public function managethis($id) {
+
+        $course = Course::find(1);
+
+        $title = 'Manage Course';
+        $active = 'managecourse';
+        return view('instructor.managethiscourse', \compact('title', 'active', 'course'));
     }
 
 }
