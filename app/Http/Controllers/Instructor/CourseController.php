@@ -95,8 +95,7 @@ class CourseController extends Controller
 
         $savedcourse = $courseimg->save();
 
-        return 'yes';
-
+        return redirect(route('instructor.managethis.course', $courseimg->course_id))->with('success', 'The image was added to the course successfully');
 
     }
 

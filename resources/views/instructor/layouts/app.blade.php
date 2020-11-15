@@ -195,7 +195,7 @@
                     <!-- END: Account Menu -->
                 </div>
                 <!-- END: Top Bar -->
-                <div class="grid grid-cols-12 gap-6">
+                <div class="grid grid-cols-12 gap-">
 
                         @yield('content')
 
