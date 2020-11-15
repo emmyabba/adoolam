@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Course;
 use Auth;
-use App\Courseimage;
+
 
 class CourseController extends Controller
 {
@@ -89,23 +89,21 @@ class CourseController extends Controller
 
         $request->course_image->storeAs('course-image', $filename, 'public');
 
-        $courseimg = new Courseimage;
-        $courseimg->course_id = $request->course_id;
-        $courseimg->course_image_name = $filename;
+        $thiscourse = Course::where('id', $request->course_id)->first();
 
-        $savedcourse = $courseimg->save();
+        $thiscourse->update(['course_avatar' => $filename]);
 
-        return redirect(route('instructor.managethis.course', $courseimg->course_id))->with('success', 'The image was added to the course successfully');
+        return redirect(route('instructor.managethis.course', $request->course_id))->with('success', 'The image was added to the course successfully');
 
     }
 
     public function managethis($id) {
 
-        $course = Course::find($id);
+        $thiscourse = Course::find($id);
 
         $title = 'Manage Course';
         $active = 'course';
-        return view('instructor.managethiscourse', \compact('title', 'active', 'course'));
+        return view('instructor.managethiscourse', \compact('title', 'active', 'thiscourse'));
     }
 
     public function myprofile($id) {

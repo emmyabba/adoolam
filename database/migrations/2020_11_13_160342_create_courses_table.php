@@ -21,6 +21,7 @@ class CreateCoursesTable extends Migration
             $table->string('course_status');
             $table->string('course_type')->nullable();
             $table->string('course_price')->nullable();
+            $table->string('course_avatar')->nullable();
             $table->timestamps();
         });
     }
