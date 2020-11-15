@@ -144,6 +144,28 @@ class CourseController extends Controller
         return view('instructor.add_course_resource_form', \compact('title', 'active', 'course'));
     }
 
+    public function processcourseresource(Request $request){
+
+        $request->validate([
+            'course_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ],
+        [
+            'required' => 'You have to uplaod an image for the course.'
+        ]
+    );
+
+    $filename = mt_rand(1, time()).$request->course_image->getClientOriginalName();
+
+        $request->course_image->storeAs('course-image', $filename, 'public');
+
+        $thiscourse = Course::where('id', $request->course_id)->first();
+
+        $thiscourse->update(['course_avatar' => $filename]);
+
+        return redirect(route('instructor.managethis.course', $request->course_id))->with('success', 'The image was added to the course successfully');
+
+    }
+
 
 
 }

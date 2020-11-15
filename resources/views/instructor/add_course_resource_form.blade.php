@@ -14,7 +14,7 @@
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 lg:col-span-10">
             <!-- BEGIN: Input -->
-            <form data-single="true" action="{{route('instructor.processcourseimage', $course->id)}}" method="POST" enctype="multipart/form-data">
+            <form data-single="true" action="{{route('instructor.processcourseresource', $course->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="intro-y box">
                     <div class="fallback">
@@ -27,7 +27,7 @@
             <div class="intro-y box">
 
                 <div>
-               <p><button class="button w-24 mr-1 mb-2 bg-theme-1 text-white w-full" type="submit">Upload Course Image</button></p>
+               <p><button class="button w-24 mr-1 mb-2 bg-theme-1 text-white w-full" type="submit">Save Resource</button></p>
                 </div>
 
         </div>
