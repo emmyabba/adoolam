@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Instructor;
 
 use App\Http\Controllers\Controller;
+use Auth;
+use App\Course;
 
 class HomeController extends Controller
 {
@@ -27,7 +29,9 @@ class HomeController extends Controller
     public function index() {
         $title = 'Instructor Dashboard';
         $active = 'dashboard';
-        return view('instructor.home', \compact('title', 'active'));
+
+        $coursecount = Course::where('instructor_id', Auth::guard('instructor')->user()->id)->count();
+        return view('instructor.home', \compact('title', 'active', 'coursecount'));
     }
 
 }

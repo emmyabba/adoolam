@@ -30,46 +30,55 @@ class CourseController extends Controller
      */
     public function index() {
         $title = 'Add Course';
-        $active = 'addcourse';
+        $active = 'course';
         return view('instructor.addcourse', \compact('title', 'active'));
     }
 
     public function createcourse(Request $request)
     {
          $request->validate([
-            'course_title' => 'required|max:255|unique:courses',
-            'course_description' => 'required|max:255',
-            'course_price' => 'required'
+            'course_title' => 'required',
+            'course_description' => 'required'
         ]);
 
         $course = new Course;
         $course->instructor_id = Auth::guard('instructor')->user()->id;
         $course->course_title = $request->course_title;
         $course->course_description = $request->course_description;
-        $course->status = 1;
+        $course->course_status = 1;
         $course->course_type = $request->course_type;
         $course->course_price = $request->course_price;
 
-        $course->save();
+        $savedcourse = $course->save();
 
-        return redirect(route('instructor.course.course'))->back()->with('success', 'Thank you for signing up. We will let you know when we go LIVE');
+        return redirect(route('instructor.managethis.course', $course->id))->with('success',  $course->course_title.' course Was created successfully');
 
     }
 
     public function manage() {
 
         $title = 'Manage Course';
-        $active = 'managecourse';
-        return view('instructor.managecourse', \compact('title', 'active'));
+        $active = 'course';
+
+        $mycourses = Course::where('instructor_id', Auth::guard('instructor')->user()->id)->get();
+
+        return view('instructor.managecourse', \compact('title', 'active', 'mycourses'));
     }
 
     public function managethis($id) {
 
-        $course = Course::find(1);
+        $course = Course::find($id);
 
         $title = 'Manage Course';
-        $active = 'managecourse';
+        $active = 'course';
         return view('instructor.managethiscourse', \compact('title', 'active', 'course'));
+    }
+
+    public function myprofile($id) {
+
+        $title = 'My profile';
+        $active = 'profile';
+        return view('instructor.profile', \compact('title', 'active'));
     }
 
 }

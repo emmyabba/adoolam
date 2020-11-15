@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:;" class="side-menu @if($active =='addcourse'){{'side-menu--active'}}@endif">
+                        <a href="javascript:;" class="side-menu @if($active =='course'){{'side-menu--active'}}@endif">
                             <div class="side-menu__icon"> <i data-feather="book-open"></i> </div>
                             <div class="side-menu__title"> courses <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
                         </a>
@@ -196,9 +196,8 @@
                 </div>
                 <!-- END: Top Bar -->
                 <div class="grid grid-cols-12 gap-6">
-                    <div class="col-span-12 xxl:col-span-9 grid grid-cols-12 gap-6">
+
                         @yield('content')
-                    </div>
 
                 </div>
             </div>

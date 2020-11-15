@@ -31,7 +31,7 @@
                     <div class="flex">
                         <i data-feather="book-open" class="report-box__icon text-theme-11"></i>
                     </div>
-                    <div class="text-3xl font-bold leading-8 mt-6">0</div>
+                    <div class="text-3xl font-bold leading-8 mt-6">{{$coursecount}}</div>
                     <div class="text-base text-gray-600 mt-1">My courses</div>
                 </div>
             </div>

@@ -62,4 +62,9 @@ class Instructor extends Authenticatable
         $this->notify(new InstructorVerifyEmail);
     }
 
+    public function courses()
+    {
+        return $this->hasMany('App\Models\Course');
+    }
+
 }

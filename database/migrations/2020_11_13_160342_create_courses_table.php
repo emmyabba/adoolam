@@ -18,7 +18,7 @@ class CreateCoursesTable extends Migration
             $table->string('instructor_id');
             $table->string('course_title');
             $table->longText('course_description')->nullable();
-            $table->string('status');
+            $table->string('course_status');
             $table->string('course_type')->nullable();
             $table->string('course_price')->nullable();
             $table->timestamps();
