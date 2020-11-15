@@ -62,14 +62,14 @@
                 <div class="intro-y box col-span-12 lg:col-span-6">
                     <div class="flex items-center p-5 border-b border-gray-200">
                         <h2 class="font-medium text-base mr-auto">
-                            Course Description
+                            Course Resources
                         </h2>
                         <div class="dropdown relative ml-auto">
-                            <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"> <i data-feather="more-horizontal" class="w-5 h-5 text-gray-700"></i> </a>
+                            <a class="dropdown-toggle w-5 h-5 block" href="{{route('instructor.add.resource', $thiscourse->id)}}"> <i data-feather="plus" class="w-5 h-5 text-gray-700"></i> </a>
                         </div>
                     </div>
                     <div class="p-5">
-                        <p>{!! html_entity_decode($thiscourse->course_description) !!}</p>
+                        <p><a></a> </p>
                     </div>
                 </div>
                 <div class="intro-y box col-span-12 lg:col-span-6">

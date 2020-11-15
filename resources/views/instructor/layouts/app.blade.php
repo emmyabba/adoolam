@@ -97,7 +97,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" class="side-menu @if($active =='student'){{'side-menu--active'}}@endif"">
+                        <a href="javascript:;" class="side-menu @if($active =='student'){{'side-menu--active'}}@endif">
                             <div class="side-menu__icon"> <i data-feather="users"></i> </div>
                             <div class="side-menu__title"> Students <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
                         </a>
@@ -113,10 +113,20 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" class="side-menu">
+                        <a href="javascript:;" class="side-menu @if($active =='finance'){{'side-menu--active'}}@endif">
                             <div class="side-menu__icon"> <i data-feather="briefcase"></i> </div>
                             <div class="side-menu__title"> Finance <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
                         </a>
+                        <ul class="">
+                            <li>
+                                <a href="{{route( 'instructor.finance')}}" class="side-menu">
+                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                    <div class="side-menu__title"> My Finance </div>
+                                </a>
+                            </li>
+                            <li>
+                            </li>
+                        </ul>
 
                     </li>
 

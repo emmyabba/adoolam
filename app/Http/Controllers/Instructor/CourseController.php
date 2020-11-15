@@ -128,4 +128,22 @@ class CourseController extends Controller
         return view('instructor.students', \compact('title', 'active'));
     }
 
+    public function finance() {
+
+        $title = 'My Finance';
+        $active = 'finance';
+        return view('instructor.finance', \compact('title', 'active'));
+    }
+
+    public function uploadcourseresource($id) {
+
+        $course = Course::find($id);
+
+        $title = 'Course Resources';
+        $active = 'course';
+        return view('instructor.add_course_resource_form', \compact('title', 'active', 'course'));
+    }
+
+
+
 }
