@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Course;
 use Auth;
+use App\Courseimage;
 
 class CourseController extends Controller
 {
@@ -74,26 +75,29 @@ class CourseController extends Controller
         return view('instructor.courseimage', \compact('title', 'active', 'course'));
     }
 
-    public function processcourseimage(){
-            dd(request()->all());
+    public function processcourseimage(Request $request){
+
         $request->validate([
             'course_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ],
         [
-            'image' => 'You have to uplaod an image for the course.'
+            'required' => 'You have to uplaod an image for the course.'
         ]
-
     );
 
-        $imageName = time().'.'.$request->course_image->extension();
+    $filename = mt_rand(1, time()).$request->course_image->getClientOriginalName();
 
-        dd($imageName);
+        $request->course_image->storeAs('course-image', $filename, 'public');
 
-        $request->image->move(public_path('images'), $imageName);
+        $courseimg = new Courseimage;
+        $courseimg->course_id = $request->course_id;
+        $courseimg->course_image_name = $filename;
 
-        return back()
-            ->with('success','You have successfully upload image.')
-            ->with('image',$imageName);
+        $savedcourse = $courseimg->save();
+
+        return 'yes';
+
+
     }
 
     public function managethis($id) {

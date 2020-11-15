@@ -14,17 +14,23 @@
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 lg:col-span-10">
             <!-- BEGIN: Input -->
-            <form data-single="true" action="{{route('instructor.processcourseimage', $course->id)}}" method="POST" class="dropzone border-gray-200 border-dashed" enctype="multipart/form-data">
+            <form data-single="true" action="{{route('instructor.processcourseimage', $course->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="intro-y box">
-                    <div class="fallback"> <input name="course_image" type="file" /> </div>
-                    <div class="dz-message" data-dz-message> <div class="text-lg font-medium">Drop your course image file here or click to upload us the file finder.</div>
-                    <div class="text-gray-600"> The image should be less than 2 MB but still retain its quality</div> </div>
-                    <div>
-                     <button class="button w-24 mr-1 mb-2 bg-theme-1 text-white w-full" type="submit">Upload Course Image</button>
+                    <div class="fallback">
+                        <input name="course_image" type="file" />
+                    <input name="course_id" type="hidden" value="{{$course->id}}" />
                     </div>
 
             </div>
+            <br>
+            <div class="intro-y box">
+
+                <div>
+               <p><button class="button w-24 mr-1 mb-2 bg-theme-1 text-white w-full" type="submit">Upload Course Image</button></p>
+                </div>
+
+        </div>
         </form>
         </div>
 
@@ -33,5 +39,6 @@
 
 </div>
 <!-- END: General Report -->
+
 
 @endsection
