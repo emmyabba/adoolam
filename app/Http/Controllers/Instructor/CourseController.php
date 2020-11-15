@@ -51,7 +51,7 @@ class CourseController extends Controller
 
         $savedcourse = $course->save();
 
-        return redirect(route('instructor.managethis.course', $course->id))->with('success',  $course->course_title.' course Was created successfully');
+        return redirect(route('instructor.uploadcourseimage', $course->id))->with('success', 'The course '.$course->course_title.' was added successfully. Please upload an image for the course.');
 
     }
 
@@ -65,6 +65,37 @@ class CourseController extends Controller
         return view('instructor.managecourse', \compact('title', 'active', 'mycourses'));
     }
 
+    public function uploadcourseimage($id) {
+
+        $course = Course::find($id);
+
+        $title = 'Course Image';
+        $active = 'course';
+        return view('instructor.courseimage', \compact('title', 'active', 'course'));
+    }
+
+    public function processcourseimage(){
+            dd(request()->all());
+        $request->validate([
+            'course_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ],
+        [
+            'image' => 'You have to uplaod an image for the course.'
+        ]
+
+    );
+
+        $imageName = time().'.'.$request->course_image->extension();
+
+        dd($imageName);
+
+        $request->image->move(public_path('images'), $imageName);
+
+        return back()
+            ->with('success','You have successfully upload image.')
+            ->with('image',$imageName);
+    }
+
     public function managethis($id) {
 
         $course = Course::find($id);
@@ -75,7 +106,6 @@ class CourseController extends Controller
     }
 
     public function myprofile($id) {
-
         $title = 'My profile';
         $active = 'profile';
         return view('instructor.profile', \compact('title', 'active'));
