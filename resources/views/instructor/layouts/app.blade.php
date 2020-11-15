@@ -52,12 +52,7 @@
                                 <div class="menu__title"> Manage course </div>
                             </a>
                         </li>
-                        <li>
-                            <a href="top-menu-dashboard.html" class="menu">
-                                <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="menu__title"> Top Menu </div>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
 
@@ -102,21 +97,15 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" class="side-menu">
+                        <a href="javascript:;" class="side-menu @if($active =='student'){{'side-menu--active'}}@endif"">
                             <div class="side-menu__icon"> <i data-feather="users"></i> </div>
-                            <div class="side-menu__title"> students <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
+                            <div class="side-menu__title"> Students <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
                         </a>
                         <ul class="">
                             <li>
-                                <a href="{{route('instructor.add.course')}}" class="side-menu">
+                                <a href="{{route('instructor.students')}}" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Add course </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="simple-menu-dashboard.html" class="side-menu">
-                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Manage Courses </div>
+                                    <div class="side-menu__title"> My students </div>
                                 </a>
                             </li>
                             <li>
@@ -126,7 +115,7 @@
                     <li>
                         <a href="javascript:;" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="briefcase"></i> </div>
-                            <div class="side-menu__title"> finance <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
+                            <div class="side-menu__title"> Finance <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
                         </a>
 
                     </li>
@@ -177,17 +166,23 @@
                         <div class="dropdown-box mt-10 absolute w-56 top-0 right-0 z-20">
                             <div class="dropdown-box__content box bg-theme-38 text-white">
                                 <div class="p-4 border-b border-theme-40">
-                                    <div class="font-medium">{{ 'Name goes here' }}</div>
-                                    <div class="text-xs text-theme-41">Software Engineer</div>
+                                    <div class="font-medium">{{Auth::guard('instructor')->user()->name}}</div>
+                                    <div class="text-xs text-theme-41"></div>
                                 </div>
                                 <div class="p-2">
                                     <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="user" class="w-4 h-4 mr-2"></i> Profile </a>
-                                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="edit" class="w-4 h-4 mr-2"></i> Add Account </a>
-                                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="lock" class="w-4 h-4 mr-2"></i> Reset Password </a>
                                     <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="help-circle" class="w-4 h-4 mr-2"></i> Help </a>
                                 </div>
                                 <div class="p-2 border-t border-theme-40">
-                                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="toggle-right" class="w-4 h-4 mr-2"></i> Logout </a>
+                                    <a class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md" href="{{ route('instructor.logout') }}"
+                                    onclick="event.preventDefault();
+                                                      document.getElementById('logout-form').submit();">
+                                     <i data-feather="toggle-right" class="w-4 h-4 mr-2"></i>{{ __('Logout') }}
+                                 </a>
+
+                                 <form id="logout-form" action="{{ route('instructor.logout') }}" method="POST" style="display: none;">
+                                     @csrf
+                                 </form>
                                 </div>
                             </div>
                         </div>

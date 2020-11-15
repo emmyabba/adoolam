@@ -61,9 +61,9 @@ class CourseController extends Controller
         $title = 'Manage Course';
         $active = 'course';
 
-        $mycourses = Course::where('instructor_id', Auth::guard('instructor')->user()->id)->get();
+        $mycourses = Course::where('instructor_id', Auth::guard('instructor')->user()->id)->paginate(10);
 
-        return view('instructor.managecourse', \compact('title', 'active', 'mycourses'));
+        return view('instructor.manage', \compact('title', 'active', 'mycourses'));
     }
 
     public function uploadcourseimage($id) {
@@ -101,7 +101,7 @@ class CourseController extends Controller
 
         $thiscourse = Course::find($id);
 
-        $title = 'Manage Course';
+        $title = $thiscourse->course_title;
         $active = 'course';
         return view('instructor.managethiscourse', \compact('title', 'active', 'thiscourse'));
     }
@@ -110,6 +110,22 @@ class CourseController extends Controller
         $title = 'My profile';
         $active = 'profile';
         return view('instructor.profile', \compact('title', 'active'));
+    }
+
+    public function edit($id) {
+
+        $thiscourse = Course::find($id);
+
+        $title = $thiscourse->course_title;
+        $active = 'course';
+        return view('instructor.edit', \compact('title', 'active', 'thiscourse'));
+    }
+
+    public function student() {
+
+        $title = 'My students';
+        $active = 'student';
+        return view('instructor.students', \compact('title', 'active'));
     }
 
 }

@@ -27,27 +27,27 @@
 
             <div class="mt-6 lg:mt-0 flex-1 flex items-center justify-center px-5 border-t lg:border-0 border-gray-200 pt-5 lg:pt-0">
                 <div class="text-center rounded-md w-20 py-3">
-                    <div class="font-semibold text-theme-1 text-lg">201</div>
-                    <div class="text-gray-600">Orders</div>
+                    <div class="font-semibold text-theme-1 text-lg">&#8358; {{$thiscourse->course_price}}</div>
+                    <div class="text-gray-600">Price</div>
                 </div>
                 <div class="text-center rounded-md w-20 py-3">
-                    <div class="font-semibold text-theme-1 text-lg">1k</div>
-                    <div class="text-gray-600">Purchases</div>
+                    <div class="font-semibold text-theme-1 text-lg">0</div>
+                    <div class="text-gray-600">Students</div>
                 </div>
                 <div class="text-center rounded-md w-20 py-3">
-                    <div class="font-semibold text-theme-1 text-lg">492</div>
-                    <div class="text-gray-600">Reviews</div>
+                    <div class="font-semibold text-theme-1 text-lg">&#8358;</div>
+                    <div class="text-gray-600">Sales</div>
                 </div>
             </div>
             <div class="mt-6 lg:mt-0 flex-1 flex items-center justify-center px-5 border-t lg:border-0 border-gray-200 pt-5 lg:pt-0">
                 <div class="text-center rounded-md w-20 py-3">
-
+                    <button onClick="location.href='{{route('instructor.editcourse', $thiscourse->id)}}'" class="button px-2 mr-1 mb-2 bg-theme-1 text-white" type="submit" title="Edit"> <span class="w-5 h-5 flex items-center justify-center" title="Edit"> <i data-feather="edit" class="w-4 h-4"></i> </span> </button>
                 </div>
                 <div class="text-center rounded-md w-20 py-3">
-
+                    <button class="button px-2 mr-1 mb-2 bg-theme-6 text-white"> <span class="w-5 h-5 flex items-center justify-center" title="delete"> <i data-feather="trash" class="w-4 h-4" title="delete"></i> </span> </button>
                 </div>
                 <div class="text-center rounded-md w-20 py-3">
-
+                    <button onClick="location.href='{{route('instructor.uploadcourseimage', $thiscourse->id)}}'" class="button px-2 mr-1 mb-2 bg-gray-200 text-gray-600" title="Image Update"> <span class="w-5 h-5 flex items-center justify-center"> <i data-feather="image" class="w-4 h-4"></i> </span> </button>
                 </div>
             </div>
         </div>
