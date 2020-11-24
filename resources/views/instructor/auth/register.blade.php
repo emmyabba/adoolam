@@ -21,11 +21,11 @@
                 <!-- BEGIN: Register Info -->
                 <div class="hidden xl:flex flex-col min-h-screen">
                     <a href="" class="-intro-x flex items-center pt-5">
-                        <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="{!! asset('userback/images/logo.svg') !!}">
-                        <span class="text-white text-lg ml-3"> Mid<span class="font-medium">One</span> </span>
+
+                        <span class="text-white text-lg ml-3"> Adoo<span class="font-medium">lam</span> </span>
                     </a>
                     <div class="my-auto">
-                        <img alt="Midone Tailwind HTML Admin Template" class="-intro-x w-1/2 -mt-16" src="{!! asset('userback/images/illustration.svg') !!}">
+                        <img alt="Adoolam" class="-intro-x w-1/2 -mt-16" src="{!! asset('userback/images/illustration.svg') !!}">
                         <div class="-intro-x text-white font-small text-4xl leading-tight mt-10">
                            Create an account to get started.
                         </div>
@@ -64,7 +64,9 @@
                         </div>
                         <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                             <button class="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3" type="submit">Register</button>
-                        <a href="{{route('instructor.login')}}" class="button button--lg w-full xl:w-32 text-gray-700 border border-gray-300 mt-3 xl:mt-0">Sign in</a>
+                       </div>
+                        <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
+                       <a href="{{route('instructor.login')}}" class="button button--lg w-full xl:w-32 text-gray-700 border border-gray-300 mt-3 xl:mt-0">Sign in</a>
                         </div>
                     </div>
                 </div>

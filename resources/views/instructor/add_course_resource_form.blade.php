@@ -7,23 +7,40 @@
     @include('errors')
     <div class="intro-y flex items-center h-10">
         <h2 class="text-lg font-medium truncate mr-5">
-          Add New Resource to {{$course->course_name}}
+          Add New Resource to <span>{{$course->course_title}}</span>
         </h2>
     </div>
 
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 lg:col-span-10">
             <!-- BEGIN: Input -->
-            <form data-single="true" action="{{route('instructor.processcourseresource', $course->id)}}" method="POST" enctype="multipart/form-data">
+            <form data-single="true" action="{{route('instructor.process.resource', $course->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="intro-y box">
-                    <div class="fallback">
-                        <input name="course_image" type="file" />
-                    <input name="course_id" type="hidden" value="{{$course->id}}" />
+                    <div class="flex flex-col sm:flex-row items-center p-5 border-b border-gray-200">
+                <div class="p-5" id="input">
+                    <div class="preview">
+                        <div>
+                            <label>Resource Type</label>
+                        <div class="mt-2">
+                            <select data-hide-search="true" class="select2 w-full" name="course_resource_type">
+                                <option value="">-- select --</option>
+                                <option value="PDF">PDF</option>
+                                <option value="Video">Video</option>
+                                <option value="Audio">Audio</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="mt-3">
+                            <input name="course_resource_file" type="file" />
+                            <input name="course_id" type="hidden" value="{{$course->id}}" />
+                         </div>
                     </div>
+                </div>
 
             </div>
-            <br>
+        </div>
+
             <div class="intro-y box">
 
                 <div>

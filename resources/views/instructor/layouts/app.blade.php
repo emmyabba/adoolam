@@ -23,7 +23,7 @@
         <div class="mobile-menu md:hidden">
             <div class="mobile-menu-bar">
                 <a href="" class="flex mr-auto">
-                    <img alt="" class="w-6" src="{!! asset('userback/images/logo.svg') !!}">
+                    <img alt="" class="w-6" src="{!! asset('userback/images/adoolam_logo.png') !!}">
                 </a>
                 <a href="javascript:;" id="mobile-menu-toggler"> <i data-feather="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             </div>

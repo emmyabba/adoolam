@@ -69,7 +69,17 @@
                         </div>
                     </div>
                     <div class="p-5">
-                        <p><a></a> </p>
+                        <div class="overflow-x-auto">
+                            <table class="table">
+                        @foreach ($thiscourseresource as $item)
+                                    <tr class="bg-gray-200">
+                                        <td class="border-b">{{$item->course_resource_type}}</td>
+                                        <td class="border-b"><a target="_new" href="{{asset('/storage/course-resource/'.$item->course_resource_name)}}">{{$item->course_resource_name}}</a></td>
+                                    </tr>
+                                </tbody>
+                        @endforeach
+                    </table>
+                </div>
                     </div>
                 </div>
                 <div class="intro-y box col-span-12 lg:col-span-6">
@@ -80,6 +90,7 @@
                         <div class="dropdown relative ml-auto">
                             <a class="dropdown-toggle w-5 h-5 block" href="javascript:;"> <i data-feather="more-horizontal" class="w-5 h-5 text-gray-700"></i> </a>
                         </div>
+
                     </div>
                     <div class="p-5">
                         <p>{!! html_entity_decode($thiscourse->course_description) !!}</p>

@@ -14,7 +14,11 @@ class CreateCourseresourcesTable extends Migration
     public function up()
     {
         Schema::create('courseresources', function (Blueprint $table) {
+
             $table->id();
+            $table->string('course_id');
+            $table->string('course_resource_type');
+            $table->string('course_resource_name');
             $table->timestamps();
         });
     }

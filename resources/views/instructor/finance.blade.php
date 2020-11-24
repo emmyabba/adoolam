@@ -33,10 +33,10 @@
                             <thead>
                                 <tr>
 
-                                    <th class="whitespace-no-wrap">STUDENT NAME</th>
-                                    <th class="text-center whitespace-no-wrap">PHONE NO.</th>
-                                    <th class="text-center whitespace-no-wrap">EMAIL</th>
-                                    <th class="text-center whitespace-no-wrap"></th>
+                                    <th class="whitespace-no-wrap">Course</th>
+                                    <th class="text-center whitespace-no-wrap">Student</th>
+                                    <th class="text-center whitespace-no-wrap">Payment Status</th>
+                                    <th class="text-center whitespace-no-wrap">Amount</th>
                                 </tr>
                             </thead>
                             <tbody>

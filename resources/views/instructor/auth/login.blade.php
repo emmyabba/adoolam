@@ -21,11 +21,10 @@
                 <!-- BEGIN: Register Info -->
                 <div class="hidden xl:flex flex-col min-h-screen">
                     <a href="" class="-intro-x flex items-center pt-5">
-                        <img alt="Midone Tailwind HTML Admin Template" class="w-6" src="{!! asset('userback/images/logo.svg') !!}">
-                        <span class="text-white text-lg ml-3"> Mid<span class="font-medium">One</span> </span>
+                        <span class="text-white text-lg ml-3"> Adoo<span class="font-medium">lam</span> </span>
                     </a>
                     <div class="my-auto">
-                        <img alt="Midone Tailwind HTML Admin Template" class="-intro-x w-1/2 -mt-16" src="{!! asset('userback/images/illustration.svg') !!}">
+                        <img alt="Adoolam" class="-intro-x w-1/2 -mt-16" src="{!! asset('userback/images/illustration.svg') !!}">
                         <div class="-intro-x text-white font-medium text-4xl leading-tight mt-10">
                             Sign in to your.
                         </div>
